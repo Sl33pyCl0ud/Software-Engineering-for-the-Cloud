@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mini-app2-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mini-app2
+  template:
+    metadata:
+      labels:
+        app: mini-app2
+    spec:
+      containers:
+      - name: mini-app2
+        image: sl33pycl0ud/mini-app2:latest
+        ports:
+        - containerPort: 5000
